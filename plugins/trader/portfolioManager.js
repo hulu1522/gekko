@@ -255,7 +255,7 @@ Manager.prototype.noteOrder = function(err, order) {
   this.orders.push(order);
   // if after 1 minute the order is still there
   // we cancel and calculate & make a new one
-  setTimeout(this.checkOrder, util.minToMs(1));
+  setTimeout(this.checkOrder, 30000);
 };
 
 
@@ -291,7 +291,7 @@ Manager.prototype.checkOrder = function() {
 
     if(this.exchangeMeta.forceReorderDelay) {
         //We need to wait in case a canceled order has already reduced the amount
-        var wait = 10;
+        var wait = 5;
         log.debug(`Waiting ${wait} seconds before starting a new trade on ${this.exchangeMeta.name}!`);
 
         setTimeout(
