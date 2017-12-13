@@ -71,11 +71,11 @@ method.check = function() {
         duration: 0,
         persisted: false,
         direction: 'up',
-        adviced: false,
-        lastdiff: macddiff
+        adviced: false
       };
 
     this.trend.duration++;
+    this.trend.lastdiff = macddiff;
 
     log.debug('In uptrend since', this.trend.duration, 'candle(s)');
 
@@ -97,11 +97,11 @@ method.check = function() {
         duration: 0,
         persisted: false,
         direction: 'down',
-        adviced: false,
-        lastdiff: macddiff
+        adviced: false
       };
 
     this.trend.duration++;
+    this.trend.lastdiff = macddiff;
 
     log.debug('In downtrend since', this.trend.duration, 'candle(s)');
 
