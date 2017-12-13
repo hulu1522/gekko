@@ -2,7 +2,9 @@ short = 10
 long = 21
 signal = 9
 
-[thresholds]
-down = -0.015
-up = 0.015
-persistence = 1
+# min diff to detect a stale peak
+[threshold]
+min = 1.0
+
+# Lower setting is more aggresive
+persistence = 2
